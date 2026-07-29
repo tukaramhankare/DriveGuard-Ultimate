@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DriveGuard — Duplicate &amp; Corruption Detection for Windows</title>
+<meta name="description" content="DriveGuard scans a drive, hashes every file with SHA-256, and shows you exactly what's duplicated, damaged, or safe — with a file manager built in.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="#top">
+      <span class="logo-mark" aria-hidden="true"></span>
+      DriveGuard
+    </a>
+
+    <nav class="site-nav" id="site-nav">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#download" class="nav-cta">Download</a>
+    </nav>
+
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero wrap">
+    <div class="hero-copy">
+      <p class="eyebrow">SHA-256 · WINDOWS DESKTOP</p>
+      <h1>Find every duplicate.<br>Catch every corrupted file.</h1>
+      <p class="hero-sub">
+        DriveGuard copies a drive or storage device, hashes every file with SHA-256,
+        and shows you exactly what's duplicated, what's damaged, and where the original
+        lives — so you can rename, replace, back up, or delete with confidence.
+      </p>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" id="download-btn"
+           href="https://github.com/tukaramhankare/DriveGuard-File-Duplicate-Finder/raw/refs/heads/main/DriveGuard.exe"
+           download>
+          <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M10 2v10.5M10 12.5l-4-4M10 12.5l4-4M4 16h12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Download for Windows
+        </a>
+        <a class="btn btn-ghost" href="https://github.com/tukaramhankare/DriveGuard-File-Duplicate-Finder" target="_blank" rel="noopener">
+          View source on GitHub
+        </a>
+      </div>
+
+      <p class="hero-meta">DriveGuard.exe · 9.06 MB · Windows 10/11</p>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="sector-grid" id="sector-grid"></div>
+      <div class="sector-legend">
+        <span><i class="dot verified"></i>Verified</span>
+        <span><i class="dot duplicate"></i>Duplicate</span>
+        <span><i class="dot corrupt"></i>Corrupted</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEDGER / FEATURES -->
+  <section class="ledger wrap" id="features">
+    <h2>What it actually does</h2>
+
+    <div class="ledger-rows">
+
+      <div class="ledger-row">
+        <div class="ledger-icon" data-icon="scan">
+          <svg viewBox="0 0 24 24" width="22" height="22"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M14.5 14.5 20 20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <div class="ledger-text">
+          <h3>Full-drive scan</h3>
+          <p>Copy an entire drive or removable device, then hash every file with SHA-256 to catalog duplicates and corruption in one pass.</p>
+        </div>
+      </div>
+
+      <div class="ledger-row">
+        <div class="ledger-icon" data-icon="verify">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="ledger-text">
+          <h3>Locate the original</h3>
+          <p>Right-click or long-press any file to jump straight to its source location — rename, copy, or replace it there, verified by a matching hash before anything is overwritten.</p>
+        </div>
+      </div>
+
+      <div class="ledger-row">
+        <div class="ledger-icon" data-icon="delete">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path d="M5 7h14M9 7V5h6v2M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="ledger-text">
+          <h3>Delete with a safety net</h3>
+          <p>Delete a single file or a whole selection. DriveGuard always shows the selected count and asks for confirmation before anything is removed.</p>
+        </div>
+      </div>
+
+      <div class="ledger-row">
+        <div class="ledger-icon" data-icon="backup">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 8l1.5-3h13L20 8v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12h6M12 12v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <div class="ledger-text">
+          <h3>Back up before you touch anything</h3>
+          <p>Copy a single file or a full selection to a folder you choose — a safeguard you can take before any rename, replace, or delete.</p>
+        </div>
+      </div>
+
+      <div class="ledger-row">
+        <div class="ledger-icon" data-icon="log">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path d="M5 4h14v16H5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 9h8M8 13h8M8 17h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <div class="ledger-text">
+          <h3>A log you control</h3>
+          <p>Every action is recorded in an Operation Log you can review — and clear yourself, on your own terms, without touching a single real file.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="log-demo wrap" id="how-it-works">
+    <div class="log-demo-copy">
+      <h2>How a scan reads</h2>
+      <p>Every check DriveGuard runs lands as a line in the Operation Log. Nothing happens silently.</p>
+    </div>
+
+    <div class="terminal" id="terminal" role="img" aria-label="Example DriveGuard scan log showing a duplicate and a corrupted file being found">
+      <div class="terminal-bar">
+        <span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span>
+        <span class="terminal-title">Operation Log</span>
+      </div>
+      <pre class="terminal-body" id="terminal-body"></pre>
+    </div>
+    <p class="caption">Example output, shown for illustration — not a live scan.</p>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section class="download wrap" id="download">
+    <div class="download-card">
+      <div class="download-info">
+        <h2>Download DriveGuard</h2>
+        <p>A native Windows build. No account, no installer — run the .exe directly.</p>
+        <dl class="file-facts">
+          <div><dt>File</dt><dd>DriveGuard.exe</dd></div>
+          <div><dt>Size</dt><dd>9.06 MB</dd></div>
+          <div><dt>Platform</dt><dd>Windows 10 / 11</dd></div>
+          <div><dt>SHA-256</dt><dd class="mono-dim">— verify against your own build before distributing —</dd></div>
+        </dl>
+      </div>
+
+      <div class="download-actions">
+        <a class="btn btn-primary btn-large" id="download-btn-2"
+           href="https://github.com/tukaramhankare/DriveGuard-File-Duplicate-Finder/raw/refs/heads/main/DriveGuard.exe"
+           download>
+          <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M10 2v10.5M10 12.5l-4-4M10 12.5l4-4M4 16h12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Download DriveGuard.exe
+        </a>
+        <button class="btn btn-ghost" id="copy-link-btn" type="button" data-default-label="Copy download link">
+          Copy download link
+        </button>
+        <p class="smartscreen-note">
+          This build isn't distributed through the Microsoft Store, so Windows SmartScreen may
+          flag it on first run. Choose <strong>More info → Run anyway</strong> to continue.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>DriveGuard — built by Tukaram Hankare.</p>
+    <p>
+      <a href="https://github.com/tukaramhankare/DriveGuard-File-Duplicate-Finder" target="_blank" rel="noopener">Source on GitHub</a>
+      · <span id="year"></span>
+    </p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
